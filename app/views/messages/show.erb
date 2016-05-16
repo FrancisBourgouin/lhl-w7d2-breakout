@@ -4,6 +4,25 @@
 <p>
   <%= @message.content  %>
 </p>
+<p>
+  <%= @message.url %>
+</p>
+<p>
+Messge create at: <%= @message.created_at %>
+</p>
+
+<h3>Other posts from this author</h3>
+
+<% @author.each do |other| %>
+  <div class="message">
+    <p>
+      <%= other.content %>
+    </p>
+    <p>
+      <%= other.url %>
+    </p>
+  </div>
+<% end %>
 
 <hr/>
 <a href="/messages">Back to All Messages</a>
