@@ -1,4 +1,4 @@
-class AddTimestamps < ActiveRecord::Migration
+class AddTimestamps < ActiveRecord::Migration[4.2]
   def change
     add_column(:messages, :created_at, :datetime)
     add_column(:messages, :updated_at, :datetime)
