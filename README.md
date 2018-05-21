@@ -11,14 +11,12 @@
 * To play around with the models, type `tux` in your terminal
 * You can run migrations with `rake db:migrate`
 
-## Migrations
+##[Active Record Migrations](http://guides.rubyonrails.org/active_record_migrations.html)
 
-[Active Record Migrations](http://guides.rubyonrails.org/active_record_migrations.html)
-
-### Create a migration files
+### Create a migration file
 
 * **With Sinatra:**
-  `rake db:create_migration NAME=migration_name
+  `rake db:create_migration NAME=migration_name`
 
 * **With Rails:**
   `bin/rails g migration migration_name field1:type field2:type`
