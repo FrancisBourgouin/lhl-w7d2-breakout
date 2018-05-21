@@ -10,7 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_21_190850) do
+ActiveRecord::Schema.define(version: 2018_05_21_192153) do
+
+  create_table "channel_memberships", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "channel_id"
+    t.boolean "admin"
+    t.index ["channel_id"], name: "index_channel_memberships_on_channel_id"
+    t.index ["user_id"], name: "index_channel_memberships_on_user_id"
+  end
+
+  create_table "channels", force: :cascade do |t|
+    t.string "name"
+  end
 
   create_table "messages", force: :cascade do |t|
     t.string "title"
