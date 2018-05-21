@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_21_192153) do
+ActiveRecord::Schema.define(version: 2018_05_21_193049) do
 
   create_table "channel_memberships", force: :cascade do |t|
     t.integer "user_id"
@@ -31,6 +31,8 @@ ActiveRecord::Schema.define(version: 2018_05_21_192153) do
     t.integer "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer "channel_id"
+    t.index ["channel_id"], name: "index_messages_on_channel_id"
     t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
