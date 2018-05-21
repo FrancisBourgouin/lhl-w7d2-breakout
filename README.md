@@ -13,7 +13,7 @@
 
 ## Migrations
 
-[Active Record Migrations](http://edgeguides.rubyonrails.org/active_record_migrations.html)
+[Active Record Migrations](http://guides.rubyonrails.org/active_record_migrations.html)
 
 ### Create a migration files
 
