@@ -61,7 +61,7 @@
 => test if anything is added to the errors hash
 => If the error hash is empty, than it is a valid object
 
-`object.errors.full_messages{ |msg| puts msg }`
+`object.errors.full_messages.each{ |msg| puts msg }`
 
 ### Custom validations
 
