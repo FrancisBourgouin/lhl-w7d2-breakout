@@ -1,9 +1,10 @@
-class AddUsers < ActiveRecord::Migration[5.2]
+class AddPlayers < ActiveRecord::Migration[5.2]
   def change
-    create_table :users do |t|
+    create_table :players do |t|
       t.string :username
       t.string :email
       t.string :password
+      t.integer :points
       t.timestamps
     end
   end

@@ -13,11 +13,11 @@
 ActiveRecord::Schema.define(version: 2018_05_21_193049) do
 
   create_table "channel_memberships", force: :cascade do |t|
-    t.integer "user_id"
+    t.integer "player_id"
     t.integer "channel_id"
     t.boolean "admin"
     t.index ["channel_id"], name: "index_channel_memberships_on_channel_id"
-    t.index ["user_id"], name: "index_channel_memberships_on_user_id"
+    t.index ["player_id"], name: "index_channel_memberships_on_player_id"
   end
 
   create_table "channels", force: :cascade do |t|
@@ -27,19 +27,22 @@ ActiveRecord::Schema.define(version: 2018_05_21_193049) do
   create_table "messages", force: :cascade do |t|
     t.string "title"
     t.string "content"
-    t.string "url"
     t.integer "user_id"
+    t.string "url"
+    t.integer "player_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer "channel_id"
     t.index ["channel_id"], name: "index_messages_on_channel_id"
+    t.index ["player_id"], name: "index_messages_on_player_id"
     t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
-  create_table "users", force: :cascade do |t|
+  create_table "players", force: :cascade do |t|
     t.string "username"
     t.string "email"
     t.string "password"
+    t.integer "points"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

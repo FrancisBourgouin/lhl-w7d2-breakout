@@ -3,13 +3,14 @@ require 'faker'
 ChannelMembership.destroy_all
 Message.destroy_all
 Channel.destroy_all
-User.destroy_all
+Player.destroy_all
 
 10.times do
-  User.create({
+  Player.create({
     username: Faker::Internet.user_name,
     email: Faker::Internet.email,
-    password: Faker::Internet.password
+    password: Faker::Internet.password,
+    points: Faker::Number.number(5)
   })
 end
 
@@ -25,14 +26,14 @@ end
       content: Faker::Lorem.sentence,
       url: Faker::Internet.url,
       channel_id: channel.id,
-      user_id: rand(User.first.id..User.last.id)
+      player_id: rand(Player.first.id..Player.last.id)
     )
   end
 end
 
 10.times do 
   ChannelMembership.create(
-    user_id: rand(User.first.id..User.last.id),
+    player_id: rand(Player.first.id..Player.last.id),
     channel_id: rand(Channel.first.id..Channel.last.id),
     admin: Faker::Boolean.boolean
   )
