@@ -40,6 +40,8 @@
 
 ## Validations
 
+[Active Record Validations](http://guides.rubyonrails.org/active_record_validations.html)
+
 ### built-in validations
 
 * presence
