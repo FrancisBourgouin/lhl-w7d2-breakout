@@ -57,6 +57,8 @@
 => test if anything is added to the errors hash
 => If the error hash is empty, than it is a valid object
 
+`object.errors.full_messages{ |msg| puts msg }`
+
 ### Custom validations
 
 ** validate instead of validates **
@@ -68,9 +70,9 @@
 
 [Active Record Errors Doc](http://guides.rubyonrails.org/active_record_validations.html#working-with-validation-errors)
 
-## [Active Record Callbacks](http://guides.rubyonrails.org/active_record_callbacks.html
+## Callbacks
 
-)
+[Active Record Callbacks](http://guides.rubyonrails.org/active_record_callbacks.html)
 
 * You need to register callbacks in the models
 
