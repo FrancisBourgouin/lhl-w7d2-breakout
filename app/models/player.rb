@@ -10,9 +10,20 @@
 
     validate :cheated?
 
+    before_save :downcase_email, if: :email_given?
+
     private
 
     def cheated?
       errors.add(:points, "is over 1M, you've cheated!") unless points < 1000000 
     end
+
+    def downcase_email
+      self.email = email.downcase
+    end
+
+    def email_given?
+      !!email
+    end
+
   end
