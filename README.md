@@ -11,7 +11,9 @@
 * To play around with the models, type `tux` in your terminal
 * You can run migrations with `rake db:migrate`
 
-##[Active Record Migrations](http://guides.rubyonrails.org/active_record_migrations.html)
+## Migrations
+
+[Active Record Migrations](http://guides.rubyonrails.org/active_record_migrations.html)
 
 ### Create a migration file
 
