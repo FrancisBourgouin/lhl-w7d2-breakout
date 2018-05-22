@@ -27,7 +27,6 @@ ActiveRecord::Schema.define(version: 2018_05_21_193049) do
   create_table "messages", force: :cascade do |t|
     t.string "title"
     t.string "content"
-    t.integer "user_id"
     t.string "url"
     t.integer "player_id"
     t.datetime "created_at"
@@ -35,7 +34,6 @@ ActiveRecord::Schema.define(version: 2018_05_21_193049) do
     t.integer "channel_id"
     t.index ["channel_id"], name: "index_messages_on_channel_id"
     t.index ["player_id"], name: "index_messages_on_player_id"
-    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "players", force: :cascade do |t|
