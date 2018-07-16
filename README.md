@@ -8,8 +8,14 @@
 2.  `shotgun -p 3000 -o 0.0.0.0`
 3.  Visit `http://localhost:3000/` in your browser
 
-* To play around with the models, type `tux` in your terminal
-* You can run migrations with `rake db:migrate`
+- To play around with the models, type `tux` in your terminal
+- You can run migrations with `rake db:migrate`
+
+## Players ERD
+
+We need to create the database tables according to this ERD:
+
+![Players ERD](/screenshots/players_erd.png?raw=true "Players ERD")
 
 ## Migrations
 
@@ -17,14 +23,14 @@
 
 ### Create a migration file
 
-* **With Sinatra:**
+- **With Sinatra:**
   `rake db:create_migration NAME=migration_name`
 
-* **With Rails:**
+- **With Rails:**
   `bin/rails g migration migration_name field1:type field2:type`
 
-* Make sure the version number shows up in the migration
-* No need to create up and down versions. Active Record knows how to rollback
+- Make sure the version number shows up in the migration
+- No need to create up and down versions. Active Record knows how to rollback
 
 **Rake is the task runner used by Rails**
 
@@ -32,7 +38,7 @@
 
 `rake db:migrate`
 
-* ActiveRecord will update schema.rb automatically. No need to touch this file.
+- ActiveRecord will update schema.rb automatically. No need to touch this file.
 
 ### Role Back Migrations
 
@@ -44,18 +50,18 @@
 
 ### built-in validations
 
-* presence
-* uniqueness
-* numericality
-* length
+- presence
+- uniqueness
+- numericality
+- length
 
 ### Test the validity
 
 #### What triggers validations?
 
-* create
-* save
-* update
+- create
+- save
+- update
 
 **.valid?**
 => test if anything is added to the errors hash
@@ -67,8 +73,8 @@
 
 ** validate instead of validates **
 
-* You need to create your own method
-* The method will add an error to the error hash if something is not valid
+- You need to create your own method
+- The method will add an error to the error hash if something is not valid
 
 `errors.add(:error_name, "error message)`
 
@@ -78,7 +84,7 @@
 
 [Active Record Callbacks](http://guides.rubyonrails.org/active_record_callbacks.html)
 
-* You need to register callbacks in the models
+- You need to register callbacks in the models
 
 callbacks are available when:
 
