@@ -55,6 +55,10 @@ We need to create the database tables according to this ERD:
 - numericality
 - length
 
+- regular expression for email validation:
+
+  /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
+
 ### Test the validity
 
 #### What triggers validations?
